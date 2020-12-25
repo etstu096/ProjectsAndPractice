@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+var express = require('express'); // import express
+var app = express(); // assign instance of express so we can use it
+var hello = require('./hello.js');
+var dynamicRoute = require('./dynamicRoutes.js');
+app.get('/', function(req,res){
+  res.render('index' , {title: 'Express'});
 });
 
-module.exports = router;
+
+app.use('/', dynamicRoute);
+app.use('/hello', hello);
+
+
+module.exports = app;
