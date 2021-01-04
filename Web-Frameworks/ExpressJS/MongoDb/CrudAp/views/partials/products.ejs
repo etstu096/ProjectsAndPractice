@@ -1,0 +1,17 @@
+<ul >
+  <% products.forEach(function(item){ %>
+    <li > 
+      <p>
+        ID: <%= item._id %>  <br>
+        Name: <%= item.name %>  <br>
+        Brand: <%= item.brand %>  <br>
+        Description: <%= item.description %>  <br>
+        Price: <%= item.price %>  <br>
+      </p>
+      <form action="/products" method="POST">
+      <input type="hidden" name="id" value="<%= item._id %>">
+      <input type="submit" value="delete">
+      </form>
+    </li>
+    <% }); %>
+</ul>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/navigation') %>
+  </header>
+  <h1>Found Products</h1>
+  <form action="/products" method="POST">
+
+    <ul>
+      <% products.forEach(function(item){ %>
+      <li>
+        <p>
+          ID: <%= item._id %> <br>
+          Name: <%= item.name %> <br>
+          Brand: <%= item.brand %> <br>
+          Description: <%= item.description %> <br>
+          Price: <%= item.price %> <br>
+        </p>
+        <input type="hidden" name="id" value="<%= item._id %>">
+      </li>
+      <input type="submit" value="Delete">
+
+      <% }); %>
+    </ul>
+  </form>
+
+
+
+
+  <nav style="float: left;">
+    <a href="http://localhost:3000/products/add">add product </a>
+    <a href="http://localhost:3000/products/search"> search</a>
+  </nav>
+</body>
+
+</html>
