@@ -61,7 +61,7 @@ MongodbClient.connect("mongodb://localhost:27017/products", (err, db) => {
   })
 
   router.post('/',(req,res)=>{
-    console.log(req.body);
+    console.log(req.params._id);
     itemsCollection.deleteOne({_id: req.body.id});
     res.redirect('/');
   });

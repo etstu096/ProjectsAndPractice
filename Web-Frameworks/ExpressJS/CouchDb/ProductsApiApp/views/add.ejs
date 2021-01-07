@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./partials/headInfo.ejs') %>
+</head>
+
+<body>
+  <form action="/products/add" method="post">
+    <p>
+      <label for="nameInput">name</label>
+      <input type="text" name="name" id="nameInput">
+    </p>
+    <p>
+      <label for="brandInput">brand</label>
+      <input type="text" name="brand" id="brandInput">
+    </p>
+
+    <p> 
+      <label for="descriptionInput">description</label>
+      <input type="text" name="description" id="descriptionInput">
+    </p>
+    <p>
+      <label for="priceInput">price</label>
+      <input type="text" name="price" id="priceInput">  
+    </p>
+    <input type="hidden" name="type" value="product">
+    <input type="submit" value="add">
+  </form>
+
+  <footer>
+    <%- include('./partials/navigation.ejs') %>
+
+  </footer>
+
+</body>
+
+</html>

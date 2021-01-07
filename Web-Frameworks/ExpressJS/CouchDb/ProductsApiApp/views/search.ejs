@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/headInfo.ejs') %>
+  </head>
+  <body>
+      <form action="/products/results" method="GET">
+        <label for="name">name: </label>
+        <input type="text" name="name" id="name">
+        <input type="submit" value="search">
+      </form>
+    <br>
+  <%- include('./partials/navigation.ejs') %>
+  </body>
+</html>

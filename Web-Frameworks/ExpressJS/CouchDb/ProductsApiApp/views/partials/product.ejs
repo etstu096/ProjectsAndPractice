@@ -1,0 +1,21 @@
+<ul>
+    <% console.log(products) %>
+
+    <% products.forEach(product => { %>
+        <p>
+            <li>
+               <strong>Name:</strong>  <%= product.name %> <br>
+                <strong>Brand:</strong>   <%= product.brand %> <br>
+                <strong>Description:</strong> <%= product.description %> <br>
+                <strong>Price:</strong> <%= product.price %> <br>
+                <form action="/products/delete" method="post">
+
+                    <input type="hidden" name="_id" value="<%= product._id %>">
+                    <input type="hidden" name="_rev" value="<%= product._rev %>">
+                    <input type="submit"  value="delete">
+                </form>
+            </li>
+            
+        </p>
+    <% }); %>
+</ul>
